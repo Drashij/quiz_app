@@ -10,7 +10,7 @@ const port = "4020";
 app.use(bodyParser.json());
 
 app.options("*", cors());
-
+//........................................................................error in header (maybe)............................................//
 app.use((req, res, next) => {
 	res.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -25,7 +25,7 @@ app.post("/users/login", client.getlogin);
 app.post("/users/register", client.createUser);
 app.post("/users/createq", client.createq);
 app.post("/users/quiz/:id", client.addQuiz);
-app.get("/details/:id", client.getDetailsById);
+app.get("/details/:id", client.getDetailsById); //this is called when asking to show quizzes just after creation
 
 app.get("/getquiz/:id", client.getQuizById);
 app.get("/details", client.all);
